@@ -1,29 +1,23 @@
-﻿#region Using Statements
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
-#endregion
 
 namespace NumericComputingFinal
 {
-    abstract class Render
+    abstract class Map
     {
-        private Texture2D texture;
-        public Render(Entity e, Texture2D t)
-        {
-            texture = t;
-        }
+        private abstract Tile[][] tileMap;
 
-        public abstract Matrix getTranslations();
-
-        public Texture2D getTexture()
+        public Tile[][] getTileMap()
         {
-            return texture;
+            return tileMap;
         }
     }
 }

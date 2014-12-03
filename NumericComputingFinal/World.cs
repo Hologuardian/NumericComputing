@@ -57,6 +57,14 @@ namespace NumericComputingFinal
             {
                 e.draw(gameTime, graphics);
             }
+
+            foreach (Tile[] tiles in tileMap)
+            {
+                foreach (Tile t in tiles)
+                {
+                    t.draw(gameTime, graphics);
+                }
+            }
         }
 
         public void registerEntity(Entity e)
@@ -67,6 +75,11 @@ namespace NumericComputingFinal
         public void removeEntity(Entity e)
         {
             entityList.Remove(e);
+        }
+
+        public void loadMap(Map map)
+        {
+            tileMap = map.getTileMap(); 
         }
     }
 }

@@ -20,7 +20,7 @@ namespace NumericComputingFinal
             position = new Vector2(0);
         }
 
-        public abstract void draw();
+        public abstract void draw(GameTime time, SpriteBatch graphics);
         public abstract void onCollideWithEntity(Entity entity);
         public abstract BoundingBox getBB();
     }
