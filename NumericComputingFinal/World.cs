@@ -14,7 +14,7 @@ namespace NumericComputingFinal
     class World
     {
         List<Entity> entityList = new List<Entity>();
-        List<Tile> tileList = new List<Tile>();
+        Tile[][] tileMap;
 
         public void update(GameTime gameTime)
         {
@@ -36,13 +36,16 @@ namespace NumericComputingFinal
                     return true;
                 }
             }
-            foreach (Tile t in tileList)
+            foreach (Tile[] tiles in tileMap)
             {
-                if (t.getBB().Intersects(bb))
+                foreach (Tile t in tiles)
                 {
-                    t.onCollideWithEntity(entity);
-                    entity.onCollideWithTile(t);
-                    return true;
+                    if (t.getBB().Intersects(bb))
+                    {
+                        t.onCollideWithEntity(entity);
+                        entity.onCollideWithTile(t);
+                        return true;
+                    }
                 }
             }
             return false;
