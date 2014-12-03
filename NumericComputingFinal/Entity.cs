@@ -14,9 +14,9 @@ namespace NumericComputingFinal
 {
     abstract class Entity
     {
-        private Vector2 position;
-        private Vector2 facing;
-        private Vector2 velocity;
+        public Vector2 position;
+        public Vector2 facing;
+        public Vector2 velocity;
         private float health;
         private float armor;
         private List<IBehaviour> behaviourList = new List<IBehaviour>();
